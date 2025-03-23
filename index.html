@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Griffin Kimani - Portfolio</title>
+
+  <style>
+    /* General Styles */
+    :root {
+      --background-color-light: rgb(24, 24, 26);
+      --background-color-dark: #121212;
+      --text-color-light: #f4f4f9;
+      --text-color-dark: #333;
+      --primary-color: #ff6600;
+      --accent-color: #00ffcc;
+      --glow-color: rgba(255, 102, 0, 0.6);
+      --transition-duration: 0.6s;
+      --font-family: 'Arial', sans-serif;
+      --blue-color: #0077b6;
+      --orange-color: #ff8c00;
+    }
+
+    body {
+      font-family: var(--font-family);
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color-light);
+      color: var(--text-color-light);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      transition: background-color var(--transition-duration), color var(--transition-duration);
+    }
+
+    /* Scroll Indicator */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background-color: var(--primary-color);
+      width: 0;
+      z-index: 1000;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: var(--primary-color);
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .theme-toggle {
+      background-color: #fff;
+      color: var(--primary-color);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background-color: var(--primary-color);
+      color: #fff;
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(255, 102, 0, 0.5);
+    }
+
+    /* Magic Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: transform 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 16px rgba(255, 102, 0, 0.6);
+      background-color: #e65500;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+    /* Surprise Button */
+    .surprise-btn {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--accent-color);
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+      transition: all 0.4s ease;
+    }
+
+    .surprise-btn:hover {
+      background-color: #ff6600;
+      box-shadow: 0 0 25px rgba(255, 102, 0, 0.8);
+      transform: rotate(10deg);
+    }
+
+    .surprise-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      margin-top: 40px;
+      padding: 40px;
+      background-color: var(--blue-color);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: white;
+    }
+
+    .testimonial-track {
+      display: flex;
+      gap: 20px;
+      overflow: auto;
+    }
+
+    .testimonial {
+      flex-shrink: 0;
+      width: 300px;
+      padding: 20px;
+      background-color: #f4f4f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: var(--orange-color);
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial:hover {
+      transform: scale(1.05);
+    }
+
+    /* Statistics Section */
+    .statistics {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 80px;
+      padding: 40px;
+      background-color: #121212;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .stat {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .stat h3 {
+      font-size: 32px;
+      color: var(--primary-color);
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-top: 150px;
+      padding: 40px;
+    }
+
+    .about img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .about p {
+      font-size: 18px;
+    }
+
+    /* Scroll Effects */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      animation: reveal 1s forwards;
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Scroll Indicator -->
+<div class="progress-bar" id="progress-bar"></div>
+
+<!-- HEADER -->
+<header>
+  <h1>Griffin Kimani</h1>
+  <button class="theme-toggle" id="theme-toggle">Toggle Theme</button>
+</header>
+
+<!-- Magic Buttons -->
+<div class="container">
+  <h2>Magical Interactions</h2>
+  <button class="btn magic-btn">Hover Me for Magic</button>
+  <button class="btn surprise-btn" onclick="showSurprise()">Click for a Surprise</button>
+</div>
+
+<!-- Statistics Section -->
+<div class="statistics">
+  <div class="stat">
+    <h3>10+</h3>
+    <p>Years of Experience</p>
+  </div>
+  <div class="stat">
+    <h3>100+</h3>
+    <p>Projects Completed</p>
+  </div>
+  <div class="stat">
+    <h3>50+</h3>
+    <p>Satisfied Clients</p>
+  </div>
+</div>
+
+<!-- ABOUT ME -->
+<div class="container about">
+  <img src="me.jpg" alt="Profile Image">
+  <div>
+    <h2>About Me</h2>
+    <p>Hi! I'm Griffin Kimani, a passionate web developer with a love for crafting interactive user experiences. I'm experienced with both front-end and back-end technologies, and I strive to bring ideas to life through coding.</p>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<div class="container testimonials scroll-reveal">
+  <h2>Testimonials</h2>
+  <div class="testimonial-track">
+    <div class="testimonial">"Griffin is an amazing developer!"</div>
+    <div class="testimonial">"Best web designer I've ever worked with!"</div>
+    <div class="testimonial">"Super professional and creative!"</div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  // Check system's theme preference (light/dark)
+  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  // Set the initial theme based on the system preference or saved in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark' || (savedTheme === null && prefersDarkMode)) {
+    document.body.dataset.theme = 'dark';
+  }
+
+  const themeToggleButton = document.getElementById('theme-toggle');
+  
+  // Toggle the theme on button click
+  themeToggleButton.addEventListener('click', () => {
+    const currentTheme = document.body.dataset.theme;
+    if (currentTheme === 'dark') {
+      document.body.dataset.theme = '';
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.body.dataset.theme = 'dark';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+
+  // Scroll Indicator
+  window.onscroll = function() {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+  };
+
+  // Show Surprise Animation
+  function showSurprise() {
+    alert("Surprise! 🎉");
+    const surpriseBtn = document.querySelector('.surprise-btn');
+    surpriseBtn.style.backgroundColor = "#00ffcc";
+    surpriseBtn.style.boxShadow = "0 0 25px rgba(0, 255, 204, 1)";
+    setTimeout(() => {
+      surpriseBtn.style.backgroundColor = "#ff6600";
+      surpriseBtn.style.boxShadow = "0 0 15px rgba(0, 255, 204, 0.6)";
+    }, 1000);
+  }
+
+  // Scroll Reveal Animations
+  window.addEventListener('scroll', () => {
+    const elements = document.querySelectorAll('.scroll-reveal');
+    elements.forEach(element => {
+      if (element.getBoundingClientRect().top <= window.innerHeight) {
+        element.classList.add('reveal');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
