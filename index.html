@@ -1,214 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Griffin Kamani - Portfolio</title>
-
-  <style>
-    /* General Styles */
-    :root {
-      --background-color-light: rgb(24, 24, 26);
-      --background-color-dark: #121212;
-      --text-color-light: #f4f4f9;
-      --text-color-dark: #333;
-      --primary-color: #ff6600;
-      --accent-color: #00ffcc;
-      --glow-color: rgba(255, 102, 0, 0.6);
-      --transition-duration: 0.6s;
-      --font-family: 'Arial', sans-serif;
-      --blue-color: #0077b6;
-      --orange-color: #ff8c00;
-    }
-
-    body {
-      font-family: var(--font-family);
-      margin: 0;
-      padding: 0;
-      background-color: var(--background-color-light);
-      color: var(--text-color-light);
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-      transition: background-color var(--transition-duration), color var(--transition-duration);
-    }
-
-    /* Scroll Indicator */
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 4px;
-      background-color: var(--primary-color);
-      width: 0;
-      z-index: 1000;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background-color: var(--primary-color);
-      color: #fff;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .theme-toggle {
-      background-color: #fff;
-      color: var(--primary-color);
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-      background-color: var(--primary-color);
-      color: #fff;
-      transform: scale(1.1);
-      box-shadow: 0 4px 12px rgba(255, 102, 0, 0.5);
-    }
-
-    /* Magic Buttons */
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: var(--primary-color);
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      text-transform: uppercase;
-      font-weight: bold;
-      transition: transform 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 16px rgba(255, 102, 0, 0.6);
-      background-color: #e65500;
-    }
-
-    .btn:focus {
-      outline: none;
-    }
-
-    /* Surprise Button */
-    .surprise-btn {
-      position: relative;
-      overflow: hidden;
-      background-color: var(--accent-color);
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
-      transition: all 0.4s ease;
-    }
-
-    .surprise-btn:hover {
-      background-color: #ff6600;
-      box-shadow: 0 0 25px rgba(255, 102, 0, 0.8);
-      transform: rotate(10deg);
-    }
-
-    .surprise-btn:active {
-      transform: scale(0.95);
-    }
-
-    /* Testimonials */
-    .testimonials {
-      margin-top: 40px;
-      padding: 40px;
-      background-color: var(--blue-color);
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      color: white;
-    }
-
-    .testimonial-track {
-      display: flex;
-      gap: 20px;
-      overflow: auto;
-    }
-
-    .testimonial {
-      flex-shrink: 0;
-      width: 300px;
-      padding: 20px;
-      background-color: #f4f4f9;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      color: var(--orange-color);
-      font-size: 18px;
-      transition: transform 0.3s ease;
-    }
-
-    .testimonial:hover {
-      transform: scale(1.05);
-    }
-
-    /* Statistics Section */
-    .statistics {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 80px;
-      padding: 40px;
-      background-color: #121212;
-      color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .stat {
-      text-align: center;
-      font-size: 24px;
-    }
-
-    .stat h3 {
-      font-size: 32px;
-      color: var(--primary-color);
-    }
-
-    /* About Section */
-    .about {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      margin-top: 150px;
-      padding: 40px;
-    }
-
-    .about img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .about p {
-      font-size: 18px;
-    }
-
-    /* Scroll Effects */
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      animation: reveal 1s forwards;
-    }
-
-    @keyframes reveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Magical Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g5n4g5n4g5n4g5n4g5n4g5n4g5n4g5n4g5" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/847e4d77f5.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -217,106 +15,306 @@
 
 <!-- HEADER -->
 <header>
-  <h1>Griffin Kimani</h1>
-  <button class="theme-toggle" id="theme-toggle">Toggle Theme</button>
+    <h1>Welcome to My Magical World</h1>
+    <p>Your journey into creativity starts here.</p>
 </header>
 
 <!-- Magic Buttons -->
 <div class="container">
-  <h2>Magical Interactions</h2>
-  <button class="btn magic-btn">Hover Me for Magic</button>
-  <button class="btn surprise-btn" onclick="showSurprise()">Click for a Surprise</button>
+    <h2>Magical Interactions</h2>
+    <button class="btn magic-btn">Hover Me for Magic</button>
+    <button class="btn surprise-btn" onclick="showSurprise()">Click for a Surprise</button>
+    <div class="tooltip" id="magicTooltip" style="display: none;">✨ Click for a surprise! ✨</div>
+</div>
+
+<!-- Hidden Content -->
+<div id="hiddenContent" style="display: none;">
+    <p>✨ Did you know? Magic happens when creativity meets technology! ✨</p>
 </div>
 
 <!-- Statistics Section -->
 <div class="statistics">
-  <div class="stat">
-    <h3>10+</h3>
-    <p>Years of Experience</p>
-  </div>
-  <div class="stat">
-    <h3>100+</h3>
-    <p>Projects Completed</p>
-  </div>
-  <div class="stat">
-    <h3>50+</h3>
-    <p>Satisfied Clients</p>
-  </div>
+    <div class="stat">
+        <h3>10+</h3>
+        <p>Years of Experience</p>
+    </div>
+    <div class="stat">
+        <h3>100+</h3>
+        <p>Projects Completed</p>
+    </div>
+    <div class="stat">
+        <h3>50+</h3>
+        <p>Satisfied Clients</p>
+    </div>
 </div>
 
 <!-- ABOUT ME -->
 <div class="container about">
-  <img src="me.jpg" alt="Profile Image">
-  <div>
-    <h2>About Me</h2>
-    <p>Hi! I'm Griffin Kimani, a passionate web developer with a love for crafting interactive user experiences. I'm experienced with both front-end and back-end technologies, and I strive to bring ideas to life through coding.</p>
-  </div>
+    <img src="me.jpg" alt="Profile Image">
+    <div>
+        <h2>About Me</h2>
+        <p>I am a passionate web developer with a keen interest in technology and design. My journey began as a hobby, evolving into a professional pursuit where I create user-friendly and visually appealing websites. I specialize in HTML, CSS, and JavaScript, and I enjoy blending creativity with functionality to solve real-world problems.</p>
+        <h2>My Interests</h2>
+        <p>When I'm not coding, I love reading, traveling, and photography. These hobbies inspire my work and help me stay connected with diverse perspectives.</p>
+        <h2>Let's Connect!</h2>
+        <p>If you're interested in collaborating or discussing ideas, feel free to reach out!</p>
+    </div>
+</div>
+
+<!-- Skills Section -->
+<div class="container skills">
+    <h2>My Skills</h2>
+    <ul>
+        <li>Web Development</li>
+        <li>Graphic Design</li>
+        <li>UI/UX Design</li>
+        <li>Content Creation</li>
+        <li>SEO Optimization</li>
+    </ul>
 </div>
 
 <!-- Testimonials -->
 <div class="container testimonials scroll-reveal">
-  <h2>Testimonials</h2>
-  <div class="testimonial-track">
-    <div class="testimonial">"Griffin is an amazing developer!"</div>
-    <div class="testimonial">"Best web designer I've ever worked with!"</div>
-    <div class="testimonial">"Super professional and creative!"</div>
-  </div>
+    <h2>Testimonials</h2>
+    <div class="testimonial-track">
+        <div class="testimonial">
+            <p>"Griffin is an amazing developer! His attention to detail and creativity made our project a success."</p>
+            <p class="client-name">- Client Name</p>
+            <p class="client-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i> <!-- Empty star for 4 out of 5 -->
+            </p>
+        </div>
+        <div class="testimonial">
+            <p>"Best web designer I've ever worked with! Highly recommend!"</p>
+            <p class="client-name">- Another Client</p>
+            <p class="client-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i> <!-- Full stars for 5 out of 5 -->
+            </p>
+        </div>
+        <div class="testimonial">
+            <p>"Super professional and creative! I loved working with him."</p>
+            <p class="client-name">- Happy Client</p>
+            <p class="client-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i> <!-- Empty star for 3 out of 5 -->
+                <i class="far fa-star"></i>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial Submission Section -->
+<div class="container testimonial-submission">
+    <h2>Submit Your Testimonial</h2>
+    <form id="testimonialForm">
+        <label for="clientName">Your Name:</label>
+        <input type="text" id="clientName" name="clientName" required>
+        
+        <label for="clientTestimonial">Your Testimonial:</label>
+        <textarea id="clientTestimonial" name="clientTestimonial" required></textarea>
+        
+        <label>Your Rating:</label>
+        <div class="star-rating" id="starRating">
+            <i class="far fa-star" data-value="1"></i>
+            <i class="far fa-star" data-value="2"></i>
+            <i class="far fa-star" data-value="3"></i>
+            <i class="far fa-star" data-value="4"></i>
+            <i class="far fa-star" data-value="5"></i>
+        </div>
+        <input type="hidden" id="clientRating" name="clientRating" required>
+        
+        <button type="submit" class="btn">Submit Testimonial</button>
+    </form>
+</div>
+
+<!-- Contact Form -->
+<div class="container contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:griffinkimani8@gmail.com" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</div>
+
+<!-- Social Media Links -->
+<div class="social-media">
+    <h2>Connect with Me</h2>
+    <a href="mailto:griffinkimani8@gmail.com" class="social-link">
+        <i class="fas fa-envelope"></i> <span>Email</span>
+    </a>
+    <a href="https://www.instagram.com/g.r.1.f.f.i.n/" class="social-link" target="_blank">
+        <i class="fab fa-instagram"></i> <span>Instagram</span>
+    </a>
+</div>
+
+<!-- Project Showcase Section -->
+<div class="project-showcase">
+    <h2>Featured Project</h2>
+    <img src="Screenshot 2025-03-26 220140.png" alt="Project Screenshot" class="project-image" />
+    <p>Check out my latest project where I developed an interactive web application that helps users manage their tasks efficiently.</p>
+    <a href="https://yourprojectlink.com" class="btn project-btn" target="_blank">View Project</a>
+</div>
+
+<!-- Modal Structure -->
+<div id="projectModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Project Details</h2>
+        <p>Here you can add more information about your project, its features, and technologies used.</p>
+    </div>
 </div>
 
 <!-- JavaScript -->
 <script>
-  // Check system's theme preference (light/dark)
-  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  // Set the initial theme based on the system preference or saved in localStorage
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark' || (savedTheme === null && prefersDarkMode)) {
-    document.body.dataset.theme = 'dark';
-  }
+    // Scroll Indicator
+    window.onscroll = function() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
 
-  const themeToggleButton = document.getElementById('theme-toggle');
-  
-  // Toggle the theme on button click
-  themeToggleButton.addEventListener('click', () => {
-    const currentTheme = document.body.dataset.theme;
-    if (currentTheme === 'dark') {
-      document.body.dataset.theme = '';
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.body.dataset.theme = 'dark';
-      localStorage.setItem('theme', 'dark');
+    // Show Surprise Animation
+    function showSurprise() {
+        document.body.style.backgroundColor = "#ffcc00"; // Bright yellow
+        alert("Surprise! 🎉 You just unlocked a special message!");
+        setTimeout(() => {
+            document.body.style.backgroundColor = ""; // Reset to original
+        }, 2000);
     }
-  });
 
-  // Scroll Indicator
-  window.onscroll = function() {
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    document.getElementById("progress-bar").style.width = scrolled + "%";
-  };
-
-  // Show Surprise Animation
-  function showSurprise() {
-    alert("Surprise! 🎉");
-    const surpriseBtn = document.querySelector('.surprise-btn');
-    surpriseBtn.style.backgroundColor = "#00ffcc";
-    surpriseBtn.style.boxShadow = "0 0 25px rgba(0, 255, 204, 1)";
-    setTimeout(() => {
-      surpriseBtn.style.backgroundColor = "#ff6600";
-      surpriseBtn.style.boxShadow = "0 0 15px rgba(0, 255, 204, 0.6)";
-    }, 1000);
-  }
-
-  // Scroll Reveal Animations
-  window.addEventListener('scroll', () => {
-    const elements = document.querySelectorAll('.scroll-reveal');
-    elements.forEach(element => {
-      if (element.getBoundingClientRect().top <= window.innerHeight) {
-        element.classList.add('reveal');
-      }
+    // Scroll Reveal Animations
+    window.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.scroll-reveal');
+        elements.forEach(element => {
+            if (element.getBoundingClientRect().top <= window.innerHeight) {
+                element.classList.add('reveal');
+            }
+        });
     });
-  });
+
+    // Handle Star Rating Selection
+    const stars = document.querySelectorAll('.star-rating i');
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            selectedRating = this.getAttribute('data-value');
+            document.getElementById('clientRating').value = selectedRating;
+
+            // Update star display
+            stars.forEach(s => {
+                s.classList.remove('fas', 'text-gold'); // Remove filled class
+                s.classList.add('far'); // Add empty class
+            });
+            for (let i = 0; i < selectedRating; i++) {
+                stars[i].classList.add('fas', 'text-gold'); // Add filled class
+                stars[i].classList.remove('far'); // Remove empty class
+            }
+        });
+    });
+
+    // Handle Testimonial Submission
+    document.getElementById('testimonialForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form values
+        const clientName = document.getElementById('clientName').value;
+        const clientTestimonial = document.getElementById('clientTestimonial').value;
+        const clientRating = document.getElementById('clientRating').value;
+
+        // Create a new testimonial element
+        const testimonialDiv = document.createElement('div');
+        testimonialDiv.classList.add('testimonial');
+        testimonialDiv.innerHTML = `
+            <p>"${clientTestimonial}"</p>
+            <p class="client-name">- ${clientName}</p>
+            <p class="client-rating">${getStars(clientRating)}</p>
+            <button class="delete-btn">Delete</button>
+        `;
+
+        // Append the new testimonial to the testimonials section
+        document.querySelector('.testimonial-track').appendChild(testimonialDiv);
+
+        // Clear the form
+        document.getElementById('testimonialForm').reset();
+        selectedRating = 0; // Reset selected rating
+        document.getElementById('clientRating').value = ''; // Reset hidden rating input
+
+        // Add delete functionality
+        testimonialDiv.querySelector('.delete-btn').addEventListener('click', function() {
+            testimonialDiv.remove(); // Remove the testimonial
+        });
+    });
+
+    // Function to generate star rating HTML
+    function getStars(rating) {
+        let stars = '';
+        for (let i = 0; i < rating; i++) {
+            stars += '<i class="fas fa-star"></i>';
+        }
+        for (let i = rating; i < 5; i++) {
+            stars += '<i class="far fa-star"></i>';
+        }
+        return stars;
+    }
+
+    // Show tooltip on hover
+    const magicButton = document.querySelector('.magic-btn');
+    const tooltip = document.getElementById('magicTooltip');
+
+    magicButton.addEventListener('mouseover', function() {
+        tooltip.style.display = 'block';
+        tooltip.style.position = 'absolute';
+        tooltip.style.left = magicButton.getBoundingClientRect().left + 'px';
+        tooltip.style.top = (magicButton.getBoundingClientRect().top - 30) + 'px'; // Position above the button
+    });
+
+    magicButton.addEventListener('mouseout', function() {
+        tooltip.style.display = 'none';
+    });
+
+    // Show hidden content on hover
+    magicButton.addEventListener('click', function() {
+        document.getElementById('hiddenContent').style.display = 'block'; // Show hidden content
+    });
+
+    // Modal functionality
+    var modal = document.getElementById("projectModal");
+    var btn = document.querySelector(".project-btn");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 </script>
 
 </body>
